@@ -20,19 +20,21 @@ class Movie {
     public function renderFilm() {
         
 
-        return "<h1>" . $this->title . "</h1>" . "<h2>" . $this->year . "</h2>" .
+        return "<h1>" . $this->title . "</h1>" . "<h2>" . $this->year . "</h2>" . $this->renderActors() .
          "<p>" . $this->overview . "</p>" . "</br>" ."<img src= '$this->poster' >";
 
         
       }
 
     public function renderActors(){
-
-        echo "<ul>";
+        $r = "";
+        $r.= "<ul>";
         foreach ($this->actors as $actor) {
-            echo "<li>" . $actor . "</li>";
+            $r.="<li>" . $actor . "</li>";
         }
-        echo "</ul>";
+        $r.= "</ul>";
+
+        return $r;
 
     }  
 
